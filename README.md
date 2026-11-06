@@ -18,9 +18,12 @@ distributed-systems-proyects/
         │   │   ├── cliente/
         │   │   ├── comun/
         │   │   └── servidor/
-        │   └── project06/
-        │       ├── calculadora/
-        │       └── rpc/
+        │   ├── project06/
+        │   │   ├── calculadora/
+        │   │   └── rpc/
+        │   └── project07/
+        │       ├── orb1/
+        │       └── orb2/
         └── resources/
             ├── project02/
             ├── project03/
@@ -68,6 +71,14 @@ Looks at the boundary between a local method call and an operation performed by 
 - **`project06.calculadora`** builds a more structured calculator service. `Calculadora` defines the service contract; `CalculadoraLocal` is a local implementation; `CalculadoraProxy` implements the same interface over TCP; and `CalculadoraSkeleton` decodes requests and invokes the server-side implementation. `Protocolo` defines the wire format, while the demos compare local and remote calls and exercise the stateful accumulator.
 
 This project focuses on interface-based service boundaries, request encoding, remote errors, timeouts, retries, and call identifiers for recognizing repeated requests.
+
+### `project07` — Object Request Broker, implementing our own proxy
+Showcase how a multi instance object proxy works, by managing multiple objects through the same proxy and interface.
+
+- `orb1` is the package containing the code to manage 1 unique object for the whole proxy. The package objective was to develop the main business logic for the implementation of a contact list.
+- `orb2` implements an Object Request Broker managing multiple object for independent contact lists.
+
+This project focuses on understanding the underlying business logic required to operate a multi instance proxy for remote procedure invocation over non-local objects.
 
 ## Example request flow
 
